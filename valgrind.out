@@ -1,0 +1,46 @@
+==12248== Memcheck, a memory error detector
+==12248== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==12248== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==12248== Command: bin/xacto -p 9999
+==12248== Parent PID: 12236
+==12248== 
+==12248== 
+==12248== FILE DESCRIPTORS: 9 open (3 std) at exit.
+==12248== Open AF_INET socket 6: 127.0.0.1:9999 <-> 127.0.0.1:59886
+==12248==    at 0x49955D7: accept (accept.c:26)
+==12248==    by 0x10E313: Accept (csapp.c:579)
+==12248==    by 0x10AFE5: main (in /home/student/dlhe/hw5/bin/xacto)
+==12248== 
+==12248== Open AF_INET socket 5: 0.0.0.0:9999 <-> unbound
+==12248==    at 0x4995CEB: socket (syscall-template.S:120)
+==12248==    by 0x10EE29: open_listenfd (csapp.c:990)
+==12248==    by 0x10AF88: main (in /home/student/dlhe/hw5/bin/xacto)
+==12248== 
+==12248== Open file descriptor 12: /dev/shm/bxf_arena_12234 (deleted)
+==12248==    <inherited from parent>
+==12248== 
+==12248== Open file descriptor 11: /dev/shm/bxf_arena_12234 (deleted)
+==12248==    <inherited from parent>
+==12248== 
+==12248== Open file descriptor 4:
+==12248==    <inherited from parent>
+==12248== 
+==12248== Open file descriptor 3: /home/student/dlhe/hw5/valgrind.out
+==12248==    <inherited from parent>
+==12248== 
+==12248== 
+==12248== HEAP SUMMARY:
+==12248==     in use at exit: 4 bytes in 1 blocks
+==12248==   total heap usage: 13 allocs, 12 frees, 7,088 bytes allocated
+==12248== 
+==12248== LEAK SUMMARY:
+==12248==    definitely lost: 0 bytes in 0 blocks
+==12248==    indirectly lost: 0 bytes in 0 blocks
+==12248==      possibly lost: 0 bytes in 0 blocks
+==12248==    still reachable: 4 bytes in 1 blocks
+==12248==         suppressed: 0 bytes in 0 blocks
+==12248== Reachable blocks (those to which a pointer was found) are not shown.
+==12248== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==12248== 
+==12248== For lists of detected and suppressed errors, rerun with: -s
+==12248== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
